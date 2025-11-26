@@ -1,0 +1,20 @@
+{
+  "lakehouse": {
+    "transport": "sse",
+    "url": "http://mcp-proxy-server:8096/sse",
+    "groups": [
+      "users"
+    ],
+    "env": {
+        "AWS_REGION": "CHANGEME",
+        "AWS_ACCESS_KEY_ID": "CHANGEME",
+        "AWS_SECRET_ACCESS_KEY": "CHANGEME"
+    },
+    "description": "AWS Data Processing MCP Server for EDX demo.",
+    "author": "AWS Labs",
+    "short_description": "AWS Data Processing & Data Catalog Management",
+    "help_email": "support@chatui.example.com",
+    "compliance_level": "Public",
+    "require_approval": []
+  }
+}

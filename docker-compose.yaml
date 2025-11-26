@@ -1,0 +1,43 @@
+services:
+  mcp-proxy-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 8096:8096
+    command: "--pass-environment --port=8096 --host 0.0.0.0 uvx awslabs.aws-dataprocessing-mcp-server@latest"
+    env_file:
+      - .env
+    networks:
+      - mcp-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sS -I --max-time 3 http://localhost:8096/sse | head -n1 | grep -q '200'"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+  atlas:
+    build:
+      context: ./atlas-ui-3
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    environment:
+      DEBUG_MODE: "true"
+      FEATURE_TOOLS_ENABLED: "true"
+      MCP_PROXY_URL: "http://mcp-proxy-server:8096/sse"
+    networks:
+      - mcp-network
+    depends_on:
+      mcp-proxy-server:
+        condition: service_healthy
+    volumes:
+      - ./mcp.json:/app/config/overrides/mcp.json:ro
+
+networks:
+  mcp-network:
+    driver: bridge
+
