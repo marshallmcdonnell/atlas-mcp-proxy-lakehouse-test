@@ -1,4 +1,4 @@
-# Atlas UI with AWS Data Processing MCP Server Setup vi MCP-Proxy
+# Atlas UI with AWS Data Processing MCP Server Setup via MCP-Proxy
 
 This setup demonstrates how to integrate
 the [AWS Data Processing MCP Server][aws-data-mcp]
