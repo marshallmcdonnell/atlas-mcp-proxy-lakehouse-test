@@ -56,7 +56,7 @@ Thanks to Karlo Berket for suggestion / idea!
  - [Atlas UI GitHub][atlas]
  - [Model Context Protocol][mcp]
 
-[mcp-proxy](https://github.com/sparfenyuk/mcp-proxy)
-[aws-data-mcp](https://awslabs.github.io/mcp/servers/aws-dataprocessing-mcp-server/)
-[atlas](https://github.com/sandialabs/atlas-ui-3)
-[mcp](https://modelcontextprotocol.io/)
+[mcp-proxy]: https://github.com/sparfenyuk/mcp-proxy
+[aws-data-mcp]: https://awslabs.github.io/mcp/servers/aws-dataprocessing-mcp-server/
+[atlas]: https://github.com/sandialabs/atlas-ui-3
+[mcp]: https://modelcontextprotocol.io/
