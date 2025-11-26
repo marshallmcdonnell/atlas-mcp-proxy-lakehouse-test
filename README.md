@@ -10,7 +10,7 @@ Thanks to Karlo Berket for suggestion / idea!
 
 # Quickstart
 
-1. Clone [atlas][Atlas UI GitHub]
+1. Clone [atlas][atlas]
 2. Copy the Dockerfile.atlas to add version with [mcp-proxy][mcp-proxy]
   ```
   cp Dockerfile.atlas atlas-ui-3/Dockerfile
